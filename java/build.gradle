@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 sourceCompatibility = 1.7
-archivesBaseName    = "signal-service-java"
+archivesBaseName    = "signal-service-java-janus"
 version             = version_number
 group               = group_info
 
@@ -65,15 +65,15 @@ uploadArchives {
         }
 
         pom.project {
-            name 'signal-service-java'
+            name 'signal-service-java-janus'
             packaging 'jar'
             description 'Signal Service communication library for Java'
-            url 'https://github.com/WhisperSystems/libsignal-service-java'
+            url 'https://github.com/Reikun85/signal-service-android-janus'
 
             scm {
-                url 'scm:git@github.com:WhisperSystems/libsignal-service-java.git'
-                connection 'scm:git@github.com:WhisperSystems/libsignal-service-java.git'
-                developerConnection 'scm:git@github.com:WhisperSystems/libsignal-service-java.git'
+                url 'git@github.com:Reikun85/signal-service-android-janus.git'
+                connection 'git@github.com:Reikun85/signal-service-android-janus.git'
+                developerConnection 'git@github.com:Reikun85/signal-service-android-janus.git'
             }
 
             licenses {
@@ -86,7 +86,7 @@ uploadArchives {
 
             developers {
                 developer {
-                    name 'Moxie Marlinspike'
+                    name 'Moxie Marlinspike + email implementation from Reikun85'
                 }
             }
         }

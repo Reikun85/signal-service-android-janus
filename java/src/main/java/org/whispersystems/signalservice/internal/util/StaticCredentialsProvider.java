@@ -12,10 +12,12 @@ public class StaticCredentialsProvider implements CredentialsProvider {
 
   private final String user;
   private final String password;
+  private final String email;
   private final String signalingKey;
 
-  public StaticCredentialsProvider(String user, String password, String signalingKey) {
+  public StaticCredentialsProvider(String user, String email, String password, String signalingKey) {
     this.user         = user;
+    this.email        = email;
     this.password     = password;
     this.signalingKey = signalingKey;
   }
@@ -23,6 +25,11 @@ public class StaticCredentialsProvider implements CredentialsProvider {
   @Override
   public String getUser() {
     return user;
+  }
+
+  @Override
+  public String getEmail() {
+    return email;
   }
 
   @Override

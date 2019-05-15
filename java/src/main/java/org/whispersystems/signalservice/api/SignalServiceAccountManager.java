@@ -65,10 +65,10 @@ public class SignalServiceAccountManager {
    * @param userAgent A string which identifies the client software.
    */
   public SignalServiceAccountManager(SignalServiceConfiguration configuration,
-                                     String user, String password,
+                                     String user, String email, String password,
                                      String userAgent)
   {
-    this(configuration, new StaticCredentialsProvider(user, password, null), userAgent);
+    this(configuration, new StaticCredentialsProvider(user, email, password, null), userAgent);
   }
 
   public SignalServiceAccountManager(SignalServiceConfiguration configuration,

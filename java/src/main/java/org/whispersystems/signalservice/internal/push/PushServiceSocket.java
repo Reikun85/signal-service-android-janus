@@ -84,8 +84,8 @@ public class PushServiceSocket {
 
   private static final String TAG = PushServiceSocket.class.getSimpleName();
 
-  private static final String CREATE_ACCOUNT_SMS_PATH   = "/v1/accounts/sms/code/%s";
-  private static final String CREATE_ACCOUNT_VOICE_PATH = "/v1/accounts/voice/code/%s";
+  private static final String CREATE_ACCOUNT_SMS_PATH   = "/v1/accounts/sms/code/%s/email/%s";
+  private static final String CREATE_ACCOUNT_VOICE_PATH = "/v1/accounts/voice/code/%s/email/%s";
   private static final String VERIFY_ACCOUNT_CODE_PATH  = "/v1/accounts/code/%s";
   private static final String REGISTER_GCM_PATH         = "/v1/accounts/gcm/";
   private static final String TURN_SERVER_INFO          = "/v1/accounts/turn";
@@ -128,7 +128,7 @@ public class PushServiceSocket {
 
   public void createAccount(boolean voice) throws IOException {
     String path = voice ? CREATE_ACCOUNT_VOICE_PATH : CREATE_ACCOUNT_SMS_PATH;
-    makeServiceRequest(String.format(path, credentialsProvider.getUser()), "GET", null);
+    makeServiceRequest(String.format(path, credentialsProvider.getUser(), credentialsProvider.getEmail()), "GET", null);
   }
 
   public void verifyAccountCode(String verificationCode, String signalingKey, int registrationId, boolean fetchesMessages, String pin)

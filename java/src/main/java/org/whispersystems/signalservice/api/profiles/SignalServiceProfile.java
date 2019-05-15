@@ -12,6 +12,9 @@ public class SignalServiceProfile {
   private String name;
 
   @JsonProperty
+  private String email;
+
+  @JsonProperty
   private String avatar;
 
   public SignalServiceProfile() {}
@@ -22,6 +25,10 @@ public class SignalServiceProfile {
 
   public String getName() {
     return name;
+  }
+
+  public String getEmail() {
+    return email;
   }
 
   public String getAvatar() {
